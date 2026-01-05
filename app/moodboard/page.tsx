@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/Button";
 import { Plus, Printer, ArrowLeft, Trash2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const MotionDiv = motion.div as any;
+
 export default function MoodBoardPage() {
     const { boards, addBoard, deleteBoard, addInspiration, deleteInspiration, isLoaded } = useMoodBoards();
     const [activeBoardId, setActiveBoardId] = useState<string | null>(null);
@@ -34,14 +36,11 @@ export default function MoodBoardPage() {
             <AnimatePresence mode="wait">
                 {!activeBoard ? (
                     /* ==================== BOARD LIST VIEW ==================== */
-                    <motion.div
+                    <MotionDiv
                         key="board-list"
-                        {...({
-                            initial: { opacity: 0, x: -20 },
-                            animate: { opacity: 1, x: 0 },
-                            exit: { opacity: 0, x: -20 }
-                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                        } as any)}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
                         className="space-y-8"
                     >
                         {/* Header */}
@@ -86,17 +85,14 @@ export default function MoodBoardPage() {
                                 </div>
                             </div>
                         )}
-                    </motion.div>
+                    </MotionDiv>
                 ) : (
                     /* ==================== SINGLE BOARD VIEW ==================== */
-                    <motion.div
+                    <MotionDiv
                         key="single-board"
-                        {...({
-                            initial: { opacity: 0, x: 20 },
-                            animate: { opacity: 1, x: 0 },
-                            exit: { opacity: 0, x: 20 }
-                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                        } as any)}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 20 }}
                         className="space-y-8"
                     >
                         {/* Top Bar */}
@@ -156,7 +152,7 @@ export default function MoodBoardPage() {
                                 <p className="text-wedding-slate/60">No inspiration added yet. Click &quot;Add Inspiration&quot; to start.</p>
                             </div>
                         )}
-                    </motion.div>
+                    </MotionDiv>
                 )}
             </AnimatePresence>
 
