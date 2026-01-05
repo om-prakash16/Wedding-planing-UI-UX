@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: var(--font-cormorant);
+  --font-sans: var(--font-inter);
+
+  --color-wedding-ivory: #FDFCF8;
+  --color-wedding-blush: #FCECE9;
+  --color-wedding-gold: #D4AF37;
+  --color-wedding-gold-dark: #AA8C2C;
+  --color-wedding-gold-light: #F4E5BC;
+  --color-wedding-slate: #2C3E50;
+  --color-wedding-maroon: #800020;
+  --color-wedding-sage: #9CAF88;
+
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.5s ease-out;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-wedding-ivory);
+  --foreground: var(--color-wedding-slate);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+
+  /* Hide standard layout elements */
+  aside,
+  /* Sidebar */
+  .fixed.bottom-0,
+  /* Mobile Nav */
+  .fixed.top-0
+
+  /* Sticky Headers if any */
+    {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Ensure background colors print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
