@@ -18,7 +18,7 @@ export interface Guest {
 }
 
 const DEFAULT_GUESTS: Guest[] = [
-    { id: "1", name: "Rahul Sharma", phone: "9876543210", side: "Groom", rsvp: "Yes", food: "Veg", notes: "Groom's Brother" },
+    { id: "1", name: "Annu D", phone: "9876543210", side: "Groom", rsvp: "Yes", food: "Veg", notes: "Groom's Brother" },
     { id: "2", name: "Anjali Gupta", phone: "9123456780", side: "Bride", rsvp: "Yes", food: "Non-Veg", notes: "Bride's Sister" },
     { id: "3", name: "Mr. & Mrs. Malhotra", phone: "9988776655", side: "Groom", rsvp: "Pending", food: "Veg", notes: "Family Friends from Delhi" },
     { id: "4", name: "Vikram & Family", phone: "8899001122", side: "Bride", rsvp: "No", food: "Veg", notes: "Unavailable" },

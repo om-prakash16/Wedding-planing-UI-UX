@@ -9,8 +9,6 @@ import { Button } from "@/components/ui/Button";
 import { Plus, Printer, ArrowLeft, Trash2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const MotionDiv = motion.div as any; // Cast to any to avoid Vercel build type errors
-
 export default function MoodBoardPage() {
     const { boards, addBoard, deleteBoard, addInspiration, deleteInspiration, isLoaded } = useMoodBoards();
     const [activeBoardId, setActiveBoardId] = useState<string | null>(null);
@@ -36,7 +34,7 @@ export default function MoodBoardPage() {
             <AnimatePresence mode="wait">
                 {!activeBoard ? (
                     /* ==================== BOARD LIST VIEW ==================== */
-                    <MotionDiv
+                    <motion.div
                         key="board-list"
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -85,10 +83,10 @@ export default function MoodBoardPage() {
                                 </div>
                             </div>
                         )}
-                    </MotionDiv>
+                    </motion.div>
                 ) : (
                     /* ==================== SINGLE BOARD VIEW ==================== */
-                    <MotionDiv
+                    <motion.div
                         key="single-board"
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -152,7 +150,7 @@ export default function MoodBoardPage() {
                                 <p className="text-wedding-slate/60">No inspiration added yet. Click &quot;Add Inspiration&quot; to start.</p>
                             </div>
                         )}
-                    </MotionDiv>
+                    </motion.div>
                 )}
             </AnimatePresence>
 
