@@ -27,8 +27,10 @@ export function GlobalProgress({ percentage, remainingTasks }: GlobalProgressPro
 
             <div className="relative mt-6 h-2 w-full rounded-full bg-white/20">
                 <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: `${percentage}%` }}
+                    {...({
+                        initial: { width: 0 },
+                        animate: { width: `${percentage}%` }
+                    } as any)}
                     transition={{ duration: 1, ease: "easeOut" }}
                     className="absolute h-full rounded-full bg-wedding-gold shadow-[0_0_10px_rgba(212,175,55,0.5)]"
                 />

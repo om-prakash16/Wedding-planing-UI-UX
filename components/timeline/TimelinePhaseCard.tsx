@@ -71,9 +71,11 @@ export function TimelinePhaseCard({ phase, onToggleTask, onAddTask, onDeleteTask
                 <AnimatePresence>
                     {isExpanded && (
                         <motion.div
-                            initial={{ height: 0 }}
-                            animate={{ height: "auto" }}
-                            exit={{ height: 0 }}
+                            {...({
+                                initial: { height: 0 },
+                                animate: { height: "auto" },
+                                exit: { height: 0 }
+                            } as any)}
                             className="overflow-hidden"
                         >
                             <div className="p-5 pt-0 border-t border-dashed border-wedding-gold/10">

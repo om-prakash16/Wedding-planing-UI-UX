@@ -12,8 +12,8 @@ export function PrintDashboard() {
     const { stats: guestStats } = useGuests();
     const { totals: vendorTotals, vendors } = useVendors();
 
-    const formattedDate = data.date
-        ? format(new Date(data.date), "MMMM do, yyyy")
+    const formattedDate = data.weddingDate
+        ? format(new Date(data.weddingDate), "MMMM do, yyyy")
         : "Date Not Set";
 
     const variance = budgetTotals.estimated - budgetTotals.actual;
@@ -22,7 +22,7 @@ export function PrintDashboard() {
         <div className="print-section mb-12">
             <div className="text-center mb-10 border-b-2 border-wedding-slate/10 pb-6">
                 <h1 className="font-serif text-5xl font-bold text-wedding-slate mb-2">
-                    {data.coupleName || "Our Wedding"}
+                    {data.brideName} & {data.groomName}
                 </h1>
                 <p className="font-serif text-xl italic text-wedding-slate/70">{formattedDate}</p>
             </div>

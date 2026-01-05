@@ -64,9 +64,10 @@ export function Countdown({ targetDate }: CountdownProps) {
 
     return (
         <motion.div
-            // @ts-expect-error framer-motion types conflict with React 19
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            {...({
+                initial: { opacity: 0, y: 20 },
+                animate: { opacity: 1, y: 0 }
+            } as any)}
             className="flex w-full justify-center space-x-3 md:space-x-8"
         >
             <TimeBox value={timeLeft.months} label="Months" />

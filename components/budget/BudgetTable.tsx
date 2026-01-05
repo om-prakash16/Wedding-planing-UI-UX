@@ -52,8 +52,10 @@ export function BudgetTable({ items, updateItem, deleteItem, addItem }: {
                         {items.map((item) => (
                             <motion.tr
                                 key={item.id}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
+                                {...({
+                                    initial: { opacity: 0 },
+                                    animate: { opacity: 1 }
+                                } as any)}
                                 layout
                                 className="group hover:bg-wedding-ivory/50"
                             >

@@ -86,16 +86,20 @@ export function OutfitModal({ isOpen, onClose, onSave, initialData, activePerson
             {isOpen && (
                 <>
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
+                        {...({
+                            initial: { opacity: 0 },
+                            animate: { opacity: 1 },
+                            exit: { opacity: 0 }
+                        } as any)}
                         onClick={onClose}
                         className="fixed inset-0 z-50 bg-wedding-slate/40 backdrop-blur-sm"
                     />
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                        {...({
+                            initial: { opacity: 0, scale: 0.95, y: 20 },
+                            animate: { opacity: 1, scale: 1, y: 0 },
+                            exit: { opacity: 0, scale: 0.95, y: 20 }
+                        } as any)}
                         className="fixed left-1/2 top-[5%] bottom-[5%] z-50 w-full max-w-2xl -translate-x-1/2 rounded-2xl bg-white shadow-2xl border border-wedding-gold/20 flex flex-col overflow-hidden"
                     >
                         {/* Header */}

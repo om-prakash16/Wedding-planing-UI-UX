@@ -52,9 +52,11 @@ export function GuestTable({ guests, onUpdate, onDelete }: GuestTableProps) {
                             {guests.map((guest) => (
                                 <motion.tr
                                     key={guest.id}
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
+                                    {...({
+                                        initial: { opacity: 0 },
+                                        animate: { opacity: 1 },
+                                        exit: { opacity: 0 }
+                                    } as any)}
                                     layout
                                     className="group hover:bg-wedding-ivory/30 transition-colors"
                                 >
@@ -124,9 +126,11 @@ export function GuestTable({ guests, onUpdate, onDelete }: GuestTableProps) {
                     {guests.map((guest) => (
                         <motion.div
                             key={guest.id}
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0 }}
+                            {...({
+                                initial: { opacity: 0, y: 10 },
+                                animate: { opacity: 1, y: 0 },
+                                exit: { opacity: 0 }
+                            } as any)}
                             layout
                             className="bg-white rounded-xl p-4 shadow-sm border border-wedding-gold/10 flex flex-col space-y-3"
                         >

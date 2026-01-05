@@ -15,8 +15,10 @@ export function MoodBoardCard({ board, onClick, onDelete }: MoodBoardCardProps) 
 
     return (
         <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            {...({
+                initial: { opacity: 0, scale: 0.95 },
+                animate: { opacity: 1, scale: 1 }
+            } as any)}
             whileHover={{ y: -5, transition: { duration: 0.2 } }}
             onClick={onClick}
             className="group cursor-pointer rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 border border-wedding-gold/10 overflow-hidden relative"

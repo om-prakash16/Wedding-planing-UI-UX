@@ -31,9 +31,11 @@ export function VendorList({ vendors, onEdit, onDelete }: VendorListProps) {
                 return (
                     <motion.div
                         key={vendor.id}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0 }}
+                        {...({
+                            initial: { opacity: 0, y: 10 },
+                            animate: { opacity: 1, y: 0 },
+                            exit: { opacity: 0 }
+                        } as any)}
                         className="group bg-white rounded-xl p-5 shadow-sm border border-wedding-gold/10 hover:shadow-md hover:border-wedding-gold/30 transition-all"
                     >
                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">

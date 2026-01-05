@@ -21,9 +21,10 @@ export default function Home() {
     <div className="space-y-8">
       {/* Header Section */}
       <motion.section
-        // @ts-expect-error framer-motion types conflict with React 19
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+        {...({
+          initial: { opacity: 0, y: -20 },
+          animate: { opacity: 1, y: 0 }
+        } as any)}
         className="flex flex-col items-center justify-between space-y-4 text-center md:flex-row md:text-left"
       >
         <div>

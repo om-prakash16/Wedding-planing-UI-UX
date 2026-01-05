@@ -15,9 +15,11 @@ interface OutfitCardProps {
 export function OutfitCard({ outfit, onEdit, onDelete }: OutfitCardProps) {
     return (
         <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
+            {...({
+                initial: { opacity: 0, scale: 0.95 },
+                animate: { opacity: 1, scale: 1 },
+                exit: { opacity: 0, scale: 0.95 }
+            } as any)}
             className="group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-lg transition-all duration-300 border border-wedding-gold/10"
         >
             {/* Actions Overlay */}

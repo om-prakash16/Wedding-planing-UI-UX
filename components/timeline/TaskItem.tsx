@@ -15,9 +15,11 @@ export function TaskItem({ task, onToggle, onDelete }: TaskItemProps) {
     return (
         <motion.div
             layout
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
+            {...({
+                initial: { opacity: 0, y: 10 },
+                animate: { opacity: 1, y: 0 },
+                exit: { opacity: 0 }
+            } as any)}
             className="group flex items-start space-x-3 py-3"
         >
             <button
