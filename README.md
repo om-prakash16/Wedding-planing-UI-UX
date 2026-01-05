@@ -2,7 +2,16 @@
 
 A premium, luxury-grade Digital Wedding Planner application designed for Indian weddings. Built with **Next.js 14**, **Tailwind CSS**, and **Framer Motion**, focusing on emotional aesthetics, seamless interactions, and offline-first functionality.
 
-![Wedding Planner Preview](https://placehold.co/1200x600/fae8e0/8a2e2e?text=Digital+Wedding+Planner)
+
+<div align="center">
+  <img src="public/screenshots/dashboard.png" alt="Dashboard" width="800" />
+</div>
+
+<div align="center">
+  <img src="public/screenshots/budget.png" alt="Budget Tracker" width="30%" />
+  <img src="public/screenshots/guests.png" alt="Guest List" width="30%" />
+</div>
+
 
 ## 🌟 Features
 
@@ -30,6 +39,18 @@ A premium, luxury-grade Digital Wedding Planner application designed for Indian 
 - **Icons:** [Lucide React](https://lucide.dev/)
 - **Language:** TypeScript
 - **Font:** Cormorant Garamond (Serif) & Inter (Sans)
+
+## 🚀 Deployment
+
+### Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
+
+1. Push this repository to GitHub.
+2. Login to Vercel and click "Add New...".
+3. Select "Project" and import your GitHub repository.
+4. Vercel will automatically detect the build settings. Click **Deploy**.
+
 
 ## 🚀 Getting Started
 
