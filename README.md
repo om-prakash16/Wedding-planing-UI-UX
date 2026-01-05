@@ -7,10 +7,6 @@ A premium, luxury-grade Digital Wedding Planner application designed for Indian 
   <img src="public/screenshots/dashboard.png" alt="Dashboard" width="800" />
 </div>
 
-<div align="center">
-  <img src="public/screenshots/budget.png" alt="Budget Tracker" width="30%" />
-  <img src="public/screenshots/guests.png" alt="Guest List" width="30%" />
-</div>
 
 
 ## 🌟 Features
