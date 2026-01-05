@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/Button";
 
 export default function TimelinePage() {
     const {
-        phases, toggleTask, addTask, deleteTask, updateTask,
+        phases, toggleTask, addTask, deleteTask,
         progressPercentage, totalTasks, completedTasks, isLoaded
     } = useTimeline();
 

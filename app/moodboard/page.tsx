@@ -40,6 +40,7 @@ export default function MoodBoardPage() {
                             initial: { opacity: 0, x: -20 },
                             animate: { opacity: 1, x: 0 },
                             exit: { opacity: 0, x: -20 }
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         } as any)}
                         className="space-y-8"
                     >
@@ -94,6 +95,7 @@ export default function MoodBoardPage() {
                             initial: { opacity: 0, x: 20 },
                             animate: { opacity: 1, x: 0 },
                             exit: { opacity: 0, x: 20 }
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         } as any)}
                         className="space-y-8"
                     >
@@ -133,6 +135,7 @@ export default function MoodBoardPage() {
                             <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
                                 {activeBoard.items.map(item => (
                                     <div key={item.id} className="break-inside-avoid group relative rounded-xl overflow-hidden bg-white shadow-sm border border-wedding-gold/10 hover:shadow-md transition-all">
+                                        {/* eslint-disable-next-line @next/next/no-img-element */}
                                         <img src={item.image} alt="Inspiration" className="w-full h-auto object-cover" />
                                         {item.note && (
                                             <div className="p-3 bg-white border-t border-wedding-gold/5">

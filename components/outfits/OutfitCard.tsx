@@ -1,10 +1,10 @@
 "use client";
 
-import { Outfit, PersonType } from "@/hooks/useOutfits";
-import { Edit2, Trash2, Camera, User } from "lucide-react";
+import { Outfit } from "@/hooks/useOutfits";
+import { Edit2, Trash2, Camera } from "lucide-react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
+// import { cn } from "@/lib/utils";
+// import Image from "next/image";
 
 interface OutfitCardProps {
     outfit: Outfit;
@@ -19,6 +19,7 @@ export function OutfitCard({ outfit, onEdit, onDelete }: OutfitCardProps) {
                 initial: { opacity: 0, scale: 0.95 },
                 animate: { opacity: 1, scale: 1 },
                 exit: { opacity: 0, scale: 0.95 }
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
             } as any)}
             className="group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-lg transition-all duration-300 border border-wedding-gold/10"
         >

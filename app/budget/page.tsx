@@ -4,7 +4,7 @@ import { useBudget } from "@/hooks/useBudget";
 import { BudgetTable } from "@/components/budget/BudgetTable";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
 import { IndianRupee, TrendingDown, TrendingUp, Wallet } from "lucide-react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 export default function BudgetPage() {
     const { items, addItem, updateItem, deleteItem, totals, isLoaded } = useBudget();

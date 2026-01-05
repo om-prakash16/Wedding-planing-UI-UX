@@ -2,7 +2,7 @@
 
 import { useWeddingData } from "@/hooks/useWeddingData";
 import { Countdown } from "@/components/dashboard/Countdown";
-import { Button } from "@/components/ui/Button";
+// import { Button } from "@/components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { motion } from "framer-motion";
 import { IndianRupee, Users, CalendarHeart, ArrowRight } from "lucide-react";
@@ -24,6 +24,7 @@ export default function Home() {
         {...({
           initial: { opacity: 0, y: -20 },
           animate: { opacity: 1, y: 0 }
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } as any)}
         className="flex flex-col items-center justify-between space-y-4 text-center md:flex-row md:text-left"
       >

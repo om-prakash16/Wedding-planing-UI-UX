@@ -1,7 +1,7 @@
 "use client";
 
 import { MoodBoard } from "@/hooks/useMoodBoards";
-import { Trash2, Palette, Image as ImageIcon } from "lucide-react";
+import { Trash2, Palette } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface MoodBoardCardProps {
@@ -18,6 +18,7 @@ export function MoodBoardCard({ board, onClick, onDelete }: MoodBoardCardProps) 
             {...({
                 initial: { opacity: 0, scale: 0.95 },
                 animate: { opacity: 1, scale: 1 }
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
             } as any)}
             whileHover={{ y: -5, transition: { duration: 0.2 } }}
             onClick={onClick}
@@ -26,6 +27,7 @@ export function MoodBoardCard({ board, onClick, onDelete }: MoodBoardCardProps) 
             {/* Cover Image */}
             <div className="relative aspect-[4/3] bg-wedding-ivory flex items-center justify-center overflow-hidden">
                 {coverImage ? (
+                    /* eslint-disable-next-line @next/next/no-img-element */
                     <img src={coverImage} alt={board.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 ) : (
                     <div className="flex flex-col items-center justify-center text-wedding-gold/30">

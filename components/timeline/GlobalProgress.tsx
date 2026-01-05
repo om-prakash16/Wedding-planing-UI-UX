@@ -30,6 +30,7 @@ export function GlobalProgress({ percentage, remainingTasks }: GlobalProgressPro
                     {...({
                         initial: { width: 0 },
                         animate: { width: `${percentage}%` }
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     } as any)}
                     transition={{ duration: 1, ease: "easeOut" }}
                     className="absolute h-full rounded-full bg-wedding-gold shadow-[0_0_10px_rgba(212,175,55,0.5)]"

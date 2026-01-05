@@ -9,7 +9,7 @@ import { PrintTimeline } from "@/components/print/PrintTimeline";
 import { PrintOutfits } from "@/components/print/PrintOutfits";
 import { PrintMoodBoards } from "@/components/print/PrintMoodBoards";
 import { Button } from "@/components/ui/Button";
-import { Printer, ArrowLeft, Check, Download } from "lucide-react";
+import { Printer, ArrowLeft, Check } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 

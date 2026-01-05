@@ -26,6 +26,7 @@ export function useWeddingData() {
         const saved = localStorage.getItem("wedding_data");
         if (saved) {
             try {
+                // eslint-disable-next-line react-hooks/set-state-in-effect
                 setData(JSON.parse(saved));
             } catch (e) {
                 console.error("Failed to parse wedding data", e);

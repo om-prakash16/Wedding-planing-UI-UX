@@ -1,9 +1,9 @@
 "use client";
 
-import { Vendor, VendorType } from "@/hooks/useVendors";
+import { Vendor } from "@/hooks/useVendors";
 import { Edit2, Trash2, Phone } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+// import { cn } from "@/lib/utils";
 
 interface VendorListProps {
     vendors: Vendor[];
@@ -26,7 +26,6 @@ export function VendorList({ vendors, onEdit, onDelete }: VendorListProps) {
         <div className="grid gap-4">
             {vendors.map((vendor) => {
                 const pending = vendor.totalAmount - vendor.paidAmount;
-                const status = pending <= 0 ? "Paid" : vendor.paidAmount > 0 ? "Partially Paid" : "Pending";
 
                 return (
                     <motion.div
@@ -35,6 +34,7 @@ export function VendorList({ vendors, onEdit, onDelete }: VendorListProps) {
                             initial: { opacity: 0, y: 10 },
                             animate: { opacity: 1, y: 0 },
                             exit: { opacity: 0 }
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         } as any)}
                         className="group bg-white rounded-xl p-5 shadow-sm border border-wedding-gold/10 hover:shadow-md hover:border-wedding-gold/30 transition-all"
                     >

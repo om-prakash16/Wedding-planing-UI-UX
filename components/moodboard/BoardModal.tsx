@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { MoodBoard, BoardType } from "@/hooks/useMoodBoards";
-import { X, Palette } from "lucide-react";
+import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface BoardModalProps {
@@ -40,6 +40,7 @@ export function BoardModal({ isOpen, onClose, onSave }: BoardModalProps) {
                             initial: { opacity: 0 },
                             animate: { opacity: 1 },
                             exit: { opacity: 0 }
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         } as any)}
                         onClick={onClose}
                         className="fixed inset-0 z-50 bg-wedding-slate/40 backdrop-blur-sm"
@@ -49,6 +50,7 @@ export function BoardModal({ isOpen, onClose, onSave }: BoardModalProps) {
                             initial: { opacity: 0, scale: 0.95, y: 20 },
                             animate: { opacity: 1, scale: 1, y: 0 },
                             exit: { opacity: 0, scale: 0.95, y: 20 }
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         } as any)}
                         className="fixed left-1/2 top-1/2 z-50 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white p-6 shadow-xl border border-wedding-gold/20"
                     >

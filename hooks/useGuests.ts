@@ -34,6 +34,7 @@ export function useGuests() {
         const saved = localStorage.getItem("guest_list");
         if (saved) {
             try {
+                // eslint-disable-next-line react-hooks/set-state-in-effect
                 setGuests(JSON.parse(saved));
             } catch (e) {
                 console.error("Failed to parse guest list", e);

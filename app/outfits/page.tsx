@@ -6,7 +6,7 @@ import { OutfitCard } from "@/components/outfits/OutfitCard";
 import { OutfitModal } from "@/components/outfits/OutfitModal";
 import { Button } from "@/components/ui/Button";
 import { Plus, Printer, Shirt } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export default function OutfitPage() {
@@ -119,7 +119,7 @@ export default function OutfitPage() {
                         </div>
                         <div className="max-w-md">
                             <h3 className="font-serif text-xl font-medium text-wedding-slate">No outfits planned yet</h3>
-                            <p className="text-wedding-slate/50 mt-1 mb-6">Start visualizing your {activePerson}'s look for the {activeCeremony}.</p>
+                            <p className="text-wedding-slate/50 mt-1 mb-6">Start visualizing your {activePerson}&apos;s look for the {activeCeremony}.</p>
                             <Button variant="outline" onClick={() => setIsModalOpen(true)} className="border-dashed">
                                 <Plus className="mr-2 h-4 w-4" /> Add First Outfit
                             </Button>

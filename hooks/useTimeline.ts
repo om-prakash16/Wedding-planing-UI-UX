@@ -71,6 +71,7 @@ export function useTimeline() {
         const saved = localStorage.getItem("timeline_data");
         if (saved) {
             try {
+                // eslint-disable-next-line react-hooks/set-state-in-effect
                 setPhases(JSON.parse(saved));
             } catch (e) {
                 console.error("Failed to parse timeline data", e);

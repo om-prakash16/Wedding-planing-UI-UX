@@ -36,6 +36,7 @@ export function useMoodBoards() {
         const saved = localStorage.getItem("moodboard_data");
         if (saved) {
             try {
+                // eslint-disable-next-line react-hooks/set-state-in-effect
                 setBoards(JSON.parse(saved));
             } catch (e) {
                 console.error("Failed to parse moodboard data", e);

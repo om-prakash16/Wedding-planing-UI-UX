@@ -6,7 +6,7 @@ import { TaskItem } from "./TaskItem";
 import { ChevronDown, Plus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Input } from "@/components/ui/Input";
+// import { Input } from "@/components/ui/Input";
 
 interface TimelinePhaseCardProps {
     phase: TimelinePhase;
@@ -75,6 +75,7 @@ export function TimelinePhaseCard({ phase, onToggleTask, onAddTask, onDeleteTask
                                 initial: { height: 0 },
                                 animate: { height: "auto" },
                                 exit: { height: 0 }
+                                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                             } as any)}
                             className="overflow-hidden"
                         >

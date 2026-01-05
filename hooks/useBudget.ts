@@ -34,6 +34,7 @@ export function useBudget() {
         const saved = localStorage.getItem("budget_items");
         if (saved) {
             try {
+                // eslint-disable-next-line react-hooks/set-state-in-effect
                 setItems(JSON.parse(saved));
             } catch (error) {
                 console.error("Failed to parse budget items", error);

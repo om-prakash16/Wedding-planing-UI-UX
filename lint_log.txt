@@ -1,0 +1,428 @@
+
+> wedding-planner@0.1.0 lint
+> eslint
+
+
+C:\annuw\wedding-planner\app\budget\page.tsx
+  7:10  warning  'motion' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\annuw\wedding-planner\app\moodboard\page.tsx
+   43:30  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                 @typescript-eslint/no-explicit-any
+   97:30  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                 @typescript-eslint/no-explicit-any
+  136:41  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\annuw\wedding-planner\app\outfits\page.tsx
+    9:10   warning  'motion' is defined but never used                               @typescript-eslint/no-unused-vars
+  122:113  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\annuw\wedding-planner\app\page.tsx
+   5:10  warning  'Button' is defined but never used        @typescript-eslint/no-unused-vars
+  27:14  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\annuw\wedding-planner\app\print\page.tsx
+  12:37  warning  'Download' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\annuw\wedding-planner\app\timeline\page.tsx
+  12:50  warning  'updateTask' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\annuw\wedding-planner\components\budget\BudgetTable.tsx
+   4:22  warning  'useBudget' is defined but never used     @typescript-eslint/no-unused-vars
+   5:10  warning  'Input' is defined but never used         @typescript-eslint/no-unused-vars
+  58:38  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\annuw\wedding-planner\components\dashboard\Countdown.tsx
+   4:10  warning  'cn' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     @typescript-eslint/no-unused-vars
+  70:18  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           @typescript-eslint/no-explicit-any
+  73:14  error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\annuw\wedding-planner\components\dashboard\Countdown.tsx:73:14
+  71 |             className="flex w-full justify-center space-x-3 md:space-x-8"
+  72 |         >
+> 73 |             <TimeBox value={timeLeft.months} label="Months" />
+     |              ^^^^^^^ This component is created during render
+  74 |             <TimeBox value={timeLeft.days} label="Days" />
+  75 |             <TimeBox value={timeLeft.hours} label="Hours" />
+  76 |             {/* <TimeBox value={timeLeft.minutes} label="Mins" /> */}
+
+C:\annuw\wedding-planner\components\dashboard\Countdown.tsx:52:21
+  50 |     }
+  51 |
+> 52 |     const TimeBox = ({ value, label }: { value: number; label: string }) => (
+     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 53 |         <div className="flex flex-col items-center">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 54 |             <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-sm ring-1 ring-wedding-gold/10 md:h-20 md:w-20">
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |         </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 63 |     );
+     | ^^^^^^ The component is created during render here
+  64 |
+  65 |     return (
+  66 |         <motion.div  react-hooks/static-components
+  74:14  error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\annuw\wedding-planner\components\dashboard\Countdown.tsx:74:14
+  72 |         >
+  73 |             <TimeBox value={timeLeft.months} label="Months" />
+> 74 |             <TimeBox value={timeLeft.days} label="Days" />
+     |              ^^^^^^^ This component is created during render
+  75 |             <TimeBox value={timeLeft.hours} label="Hours" />
+  76 |             {/* <TimeBox value={timeLeft.minutes} label="Mins" /> */}
+  77 |         </motion.div>
+
+C:\annuw\wedding-planner\components\dashboard\Countdown.tsx:52:21
+  50 |     }
+  51 |
+> 52 |     const TimeBox = ({ value, label }: { value: number; label: string }) => (
+     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 53 |         <div className="flex flex-col items-center">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 54 |             <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-sm ring-1 ring-wedding-gold/10 md:h-20 md:w-20">
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |         </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 63 |     );
+     | ^^^^^^ The component is created during render here
+  64 |
+  65 |     return (
+  66 |         <motion.div                                                      react-hooks/static-components
+  75:14  error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\annuw\wedding-planner\components\dashboard\Countdown.tsx:75:14
+  73 |             <TimeBox value={timeLeft.months} label="Months" />
+  74 |             <TimeBox value={timeLeft.days} label="Days" />
+> 75 |             <TimeBox value={timeLeft.hours} label="Hours" />
+     |              ^^^^^^^ This component is created during render
+  76 |             {/* <TimeBox value={timeLeft.minutes} label="Mins" /> */}
+  77 |         </motion.div>
+  78 |     );
+
+C:\annuw\wedding-planner\components\dashboard\Countdown.tsx:52:21
+  50 |     }
+  51 |
+> 52 |     const TimeBox = ({ value, label }: { value: number; label: string }) => (
+     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 53 |         <div className="flex flex-col items-center">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 54 |             <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-sm ring-1 ring-wedding-gold/10 md:h-20 md:w-20">
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 62 |         </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 63 |     );
+     | ^^^^^^ The component is created during render here
+  64 |
+  65 |     return (
+  66 |         <motion.div                                                         react-hooks/static-components
+
+C:\annuw\wedding-planner\components\guests\AddGuestModal.tsx
+  44:30  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  53:30  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\annuw\wedding-planner\components\guests\FilterBar.tsx
+  36:48  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  37:48  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\annuw\wedding-planner\components\guests\GuestStats.tsx
+  4:37  warning  'XCircle' is defined but never used     @typescript-eslint/no-unused-vars
+  5:10  warning  'RSVPStatus' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\annuw\wedding-planner\components\guests\GuestTable.tsx
+    3:17  warning  'Side' is defined but never used          @typescript-eslint/no-unused-vars
+    3:35  warning  'FoodPref' is defined but never used      @typescript-eslint/no-unused-vars
+    4:31  warning  'Edit2' is defined but never used         @typescript-eslint/no-unused-vars
+   59:42  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  133:34  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\annuw\wedding-planner\components\layout\MobileNav.tsx
+  13:10  warning  'Sidebar' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\annuw\wedding-planner\components\moodboard\BoardModal.tsx
+   7:13  warning  'Palette' is defined but never used       @typescript-eslint/no-unused-vars
+  43:30  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  52:30  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\annuw\wedding-planner\components\moodboard\InspirationModal.tsx
+   7:30  warning  'ImageIcon' is defined but never used                                                                                                                                                                                                                                                    @typescript-eslint/no-unused-vars
+  54:30  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                 @typescript-eslint/no-explicit-any
+  63:30  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                 @typescript-eslint/no-explicit-any
+  83:41  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\annuw\wedding-planner\components\moodboard\MoodBoardCard.tsx
+   4:36  warning  'ImageIcon' is defined but never used                                                                                                                                                                                                                                                    @typescript-eslint/no-unused-vars
+  21:18  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                 @typescript-eslint/no-explicit-any
+  29:21  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\annuw\wedding-planner\components\outfits\OutfitCard.tsx
+   3:18  warning  'PersonType' is defined but never used    @typescript-eslint/no-unused-vars
+   4:33  warning  'User' is defined but never used          @typescript-eslint/no-unused-vars
+   6:10  warning  'cn' is defined but never used            @typescript-eslint/no-unused-vars
+   7:8   warning  'Image' is defined but never used         @typescript-eslint/no-unused-vars
+  22:18  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\annuw\wedding-planner\components\outfits\OutfitModal.tsx
+   35:13  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\annuw\wedding-planner\components\outfits\OutfitModal.tsx:35:13
+  33 |     useEffect(() => {
+  34 |         if (initialData) {
+> 35 |             setFormData(initialData);
+     |             ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  36 |         } else {
+  37 |             setFormData({
+  38 |                 name: "",  react-hooks/set-state-in-effect
+   93:30  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @typescript-eslint/no-explicit-any
+  102:30  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @typescript-eslint/no-explicit-any
+  130:45  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       @next/next/no-img-element
+
+C:\annuw\wedding-planner\components\print\PrintOutfits.tsx
+   6:5   warning  Unused eslint-disable directive (no problems were reported from '@typescript-eslint/no-unused-vars')
+  50:14  error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\annuw\wedding-planner\components\print\PrintOutfits.tsx:50:14
+  48 |             </h2>
+  49 |
+> 50 |             <RenderOutfitSection title="Bride" data={brideOutfits} />
+     |              ^^^^^^^^^^^^^^^^^^^ This component is created during render
+  51 |             <RenderOutfitSection title="Groom" data={groomOutfits} />
+  52 |
+  53 |             <div className="mt-8 border-t-2 border-dashed border-gray-300 pt-4">
+
+C:\annuw\wedding-planner\components\print\PrintOutfits.tsx:12:33
+  10 |     const groomOutfits = outfits.filter(o => o.person === "Groom");
+  11 |
+> 12 |     const RenderOutfitSection = ({ title, data }: { title: string, data: typeof outfits }) => (
+     |                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 13 |         <div className="mb-6 break-inside-avoid">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 14 |             <h3 className="font-serif text-lg font-bold text-black border-b border-black/20 pb-1 mb-3 uppercase tracking-wider">{title}</h3>
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 41 |         </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 42 |     );
+     | ^^^^^^ The component is created during render here
+  43 |
+  44 |     return (
+  45 |         <div className="print-section break-before-page pt-8">                                                                                           react-hooks/static-components
+  51:14  error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\annuw\wedding-planner\components\print\PrintOutfits.tsx:51:14
+  49 |
+  50 |             <RenderOutfitSection title="Bride" data={brideOutfits} />
+> 51 |             <RenderOutfitSection title="Groom" data={groomOutfits} />
+     |              ^^^^^^^^^^^^^^^^^^^ This component is created during render
+  52 |
+  53 |             <div className="mt-8 border-t-2 border-dashed border-gray-300 pt-4">
+  54 |                 <h4 className="font-serif text-sm text-gray-400 uppercase tracking-widest mb-2">Notes</h4>
+
+C:\annuw\wedding-planner\components\print\PrintOutfits.tsx:12:33
+  10 |     const groomOutfits = outfits.filter(o => o.person === "Groom");
+  11 |
+> 12 |     const RenderOutfitSection = ({ title, data }: { title: string, data: typeof outfits }) => (
+     |                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 13 |         <div className="mb-6 break-inside-avoid">
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 14 |             <h3 className="font-serif text-lg font-bold text-black border-b border-black/20 pb-1 mb-3 uppercase tracking-wider">{title}</h3>
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 41 |         </div>
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 42 |     );
+     | ^^^^^^ The component is created during render here
+  43 |
+  44 |     return (
+  45 |         <div className="print-section break-before-page pt-8">  react-hooks/static-components
+
+C:\annuw\wedding-planner\components\timeline\GlobalProgress.tsx
+  33:26  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\annuw\wedding-planner\components\timeline\TaskItem.tsx
+  22:18  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\annuw\wedding-planner\components\timeline\TimelineHeader.tsx
+  16:100  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  25:22   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\annuw\wedding-planner\components\timeline\TimelinePhaseCard.tsx
+   9:10  warning  'Input' is defined but never used         @typescript-eslint/no-unused-vars
+  78:34  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\annuw\wedding-planner\components\ui\Input.tsx
+  4:18  error  An interface declaring no members is equivalent to its supertype  @typescript-eslint/no-empty-object-type
+
+C:\annuw\wedding-planner\components\vendors\VendorList.tsx
+   3:18  warning  'VendorType' is defined but never used       @typescript-eslint/no-unused-vars
+   5:18  warning  'AnimatePresence' is defined but never used  @typescript-eslint/no-unused-vars
+   6:10  warning  'cn' is defined but never used               @typescript-eslint/no-unused-vars
+  29:23  warning  'status' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  38:30  error    Unexpected any. Specify a different type     @typescript-eslint/no-explicit-any
+
+C:\annuw\wedding-planner\components\vendors\VendorModal.tsx
+  31:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\annuw\wedding-planner\components\vendors\VendorModal.tsx:31:13
+  29 |     useEffect(() => {
+  30 |         if (initialData) {
+> 31 |             setFormData(initialData);
+     |             ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  32 |         } else {
+  33 |             setFormData({ name: "", type: "Other", phone: "", totalAmount: 0, paidAmount: 0, notes: "" });
+  34 |         }  react-hooks/set-state-in-effect
+  57:30  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       @typescript-eslint/no-explicit-any
+  66:30  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       @typescript-eslint/no-explicit-any
+
+C:\annuw\wedding-planner\hooks\useBudget.ts
+  37:17  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\annuw\wedding-planner\hooks\useBudget.ts:37:17
+  35 |         if (saved) {
+  36 |             try {
+> 37 |                 setItems(JSON.parse(saved));
+     |                 ^^^^^^^^ Avoid calling setState() directly within an effect
+  38 |             } catch (error) {
+  39 |                 console.error("Failed to parse budget items", error);
+  40 |                 setItems(DEFAULT_ITEMS);  react-hooks/set-state-in-effect
+
+C:\annuw\wedding-planner\hooks\useGuests.ts
+  37:17  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\annuw\wedding-planner\hooks\useGuests.ts:37:17
+  35 |         if (saved) {
+  36 |             try {
+> 37 |                 setGuests(JSON.parse(saved));
+     |                 ^^^^^^^^^ Avoid calling setState() directly within an effect
+  38 |             } catch (e) {
+  39 |                 console.error("Failed to parse guest list", e);
+  40 |                 setGuests(DEFAULT_GUESTS);  react-hooks/set-state-in-effect
+
+C:\annuw\wedding-planner\hooks\useMoodBoards.ts
+  39:17  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\annuw\wedding-planner\hooks\useMoodBoards.ts:39:17
+  37 |         if (saved) {
+  38 |             try {
+> 39 |                 setBoards(JSON.parse(saved));
+     |                 ^^^^^^^^^ Avoid calling setState() directly within an effect
+  40 |             } catch (e) {
+  41 |                 console.error("Failed to parse moodboard data", e);
+  42 |                 setBoards(DEFAULT_BOARDS);  react-hooks/set-state-in-effect
+
+C:\annuw\wedding-planner\hooks\useOutfits.ts
+  60:17  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\annuw\wedding-planner\hooks\useOutfits.ts:60:17
+  58 |         if (saved) {
+  59 |             try {
+> 60 |                 setOutfits(JSON.parse(saved));
+     |                 ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  61 |             } catch (e) {
+  62 |                 console.error("Failed to parse outfit data", e);
+  63 |                 setOutfits(DEFAULT_OUTFITS);  react-hooks/set-state-in-effect
+
+C:\annuw\wedding-planner\hooks\useTimeline.ts
+  74:17  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\annuw\wedding-planner\hooks\useTimeline.ts:74:17
+  72 |         if (saved) {
+  73 |             try {
+> 74 |                 setPhases(JSON.parse(saved));
+     |                 ^^^^^^^^^ Avoid calling setState() directly within an effect
+  75 |             } catch (e) {
+  76 |                 console.error("Failed to parse timeline data", e);
+  77 |                 setPhases(DEFAULT_TIMELINE);  react-hooks/set-state-in-effect
+
+C:\annuw\wedding-planner\hooks\useVendors.ts
+  34:17  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\annuw\wedding-planner\hooks\useVendors.ts:34:17
+  32 |         if (saved) {
+  33 |             try {
+> 34 |                 setVendors(JSON.parse(saved));
+     |                 ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  35 |             } catch (e) {
+  36 |                 console.error("Failed to parse vendor data", e);
+  37 |                 setVendors(DEFAULT_VENDORS);  react-hooks/set-state-in-effect
+
+C:\annuw\wedding-planner\hooks\useWeddingData.ts
+  29:17  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\annuw\wedding-planner\hooks\useWeddingData.ts:29:17
+  27 |         if (saved) {
+  28 |             try {
+> 29 |                 setData(JSON.parse(saved));
+     |                 ^^^^^^^ Avoid calling setState() directly within an effect
+  30 |             } catch (e) {
+  31 |                 console.error("Failed to parse wedding data", e);
+  32 |             }  react-hooks/set-state-in-effect
+
+✖ 74 problems (43 errors, 31 warnings)
+  0 errors and 1 warning potentially fixable with the `--fix` option.
+

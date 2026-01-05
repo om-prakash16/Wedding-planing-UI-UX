@@ -10,7 +10,7 @@ import {
     Menu
 } from "lucide-react";
 import { useState } from "react";
-import { Sidebar } from "./Sidebar";
+// import { Sidebar } from "./Sidebar";
 // import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"; // We might need a Sheet component for full menu on mobile if items are too many.
 
 // For mobile bottom bar, we show max 4-5 core items, others in a "More" menu?

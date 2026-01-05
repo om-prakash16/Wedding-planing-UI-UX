@@ -16,11 +16,11 @@ export interface Vendor {
 }
 
 const DEFAULT_VENDORS: Vendor[] = [
-  { id: "1", name: "Spice Of India Catering", type: "Caterer", phone: "9876543210", totalAmount: 850000, paidAmount: 200000, notes: "Menu finalization pending for Reception" },
-  { id: "2", name: "ShutterDown Photography", type: "Photographer", phone: "9123456780", totalAmount: 250000, paidAmount: 50000, notes: "Includes Drone coverage" },
-  { id: "3", name: "Ferns N Petals Decor", type: "Decorator", phone: "8899889900", totalAmount: 400000, paidAmount: 100000, notes: "Theme: Rust & Gold" },
-  { id: "4", name: "Meenakshi Dutt Makeovers", type: "Makeup Artist", phone: "7778889990", totalAmount: 45000, paidAmount: 10000, notes: "Bridal HD Makeup" },
-  { id: "5", name: "Hotel Radisson Blu", type: "Venue", phone: "011-4567890", totalAmount: 600000, paidAmount: 300000, notes: "Hall B booked for Sangeet" },
+    { id: "1", name: "Spice Of India Catering", type: "Caterer", phone: "9876543210", totalAmount: 850000, paidAmount: 200000, notes: "Menu finalization pending for Reception" },
+    { id: "2", name: "ShutterDown Photography", type: "Photographer", phone: "9123456780", totalAmount: 250000, paidAmount: 50000, notes: "Includes Drone coverage" },
+    { id: "3", name: "Ferns N Petals Decor", type: "Decorator", phone: "8899889900", totalAmount: 400000, paidAmount: 100000, notes: "Theme: Rust & Gold" },
+    { id: "4", name: "Meenakshi Dutt Makeovers", type: "Makeup Artist", phone: "7778889990", totalAmount: 45000, paidAmount: 10000, notes: "Bridal HD Makeup" },
+    { id: "5", name: "Hotel Radisson Blu", type: "Venue", phone: "011-4567890", totalAmount: 600000, paidAmount: 300000, notes: "Hall B booked for Sangeet" },
 ];
 
 export function useVendors() {
@@ -31,6 +31,7 @@ export function useVendors() {
         const saved = localStorage.getItem("vendor_data");
         if (saved) {
             try {
+                // eslint-disable-next-line react-hooks/set-state-in-effect
                 setVendors(JSON.parse(saved));
             } catch (e) {
                 console.error("Failed to parse vendor data", e);

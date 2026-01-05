@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { BudgetItem, useBudget } from "@/hooks/useBudget";
-import { Input } from "@/components/ui/Input"; // We need to create this first or inline it
+import { BudgetItem } from "@/hooks/useBudget";
+// import { Input } from "@/components/ui/Input"; // We need to create this first or inline it
 import { Button } from "@/components/ui/Button";
 import { Trash2, Plus, Save } from "lucide-react";
 import { motion } from "framer-motion";
@@ -55,6 +55,7 @@ export function BudgetTable({ items, updateItem, deleteItem, addItem }: {
                                 {...({
                                     initial: { opacity: 0 },
                                     animate: { opacity: 1 }
+                                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                                 } as any)}
                                 layout
                                 className="group hover:bg-wedding-ivory/50"

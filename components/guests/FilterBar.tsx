@@ -33,8 +33,8 @@ export function FilterBar({ searchQuery, setSearchQuery, filterSide, setFilterSi
                     className="h-10 rounded-xl border border-wedding-gold/20 bg-white px-3 text-sm text-wedding-slate focus:outline-none focus:ring-1 focus:ring-wedding-gold"
                 >
                     <option value="All">All Sides</option>
-                    <option value="Bride">Bride's Side</option>
-                    <option value="Groom">Groom's Side</option>
+                    <option value="Bride">Bride&apos;s Side</option>
+                    <option value="Groom">Groom&apos;s Side</option>
                 </select>
 
                 <select

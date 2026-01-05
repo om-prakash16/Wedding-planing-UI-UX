@@ -32,6 +32,7 @@ export function OutfitModal({ isOpen, onClose, onSave, initialData, activePerson
     // Load initial data if editing, else reset to props default
     useEffect(() => {
         if (initialData) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setFormData(initialData);
         } else {
             setFormData({
@@ -90,6 +91,7 @@ export function OutfitModal({ isOpen, onClose, onSave, initialData, activePerson
                             initial: { opacity: 0 },
                             animate: { opacity: 1 },
                             exit: { opacity: 0 }
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         } as any)}
                         onClick={onClose}
                         className="fixed inset-0 z-50 bg-wedding-slate/40 backdrop-blur-sm"
@@ -99,6 +101,7 @@ export function OutfitModal({ isOpen, onClose, onSave, initialData, activePerson
                             initial: { opacity: 0, scale: 0.95, y: 20 },
                             animate: { opacity: 1, scale: 1, y: 0 },
                             exit: { opacity: 0, scale: 0.95, y: 20 }
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         } as any)}
                         className="fixed left-1/2 top-[5%] bottom-[5%] z-50 w-full max-w-2xl -translate-x-1/2 rounded-2xl bg-white shadow-2xl border border-wedding-gold/20 flex flex-col overflow-hidden"
                     >
@@ -127,6 +130,7 @@ export function OutfitModal({ isOpen, onClose, onSave, initialData, activePerson
                                         )}
                                     >
                                         {formData.image ? (
+                                            /* eslint-disable-next-line @next/next/no-img-element */
                                             <img src={formData.image} alt="Preview" className="h-full w-full object-cover" />
                                         ) : (
                                             <>

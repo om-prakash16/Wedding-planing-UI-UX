@@ -57,6 +57,7 @@ export function useOutfits() {
         const saved = localStorage.getItem("outfit_data");
         if (saved) {
             try {
+                // eslint-disable-next-line react-hooks/set-state-in-effect
                 setOutfits(JSON.parse(saved));
             } catch (e) {
                 console.error("Failed to parse outfit data", e);

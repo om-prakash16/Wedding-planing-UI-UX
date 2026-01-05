@@ -1,8 +1,8 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
-import { Users, CheckCircle, Clock, XCircle, Utensils } from "lucide-react";
-import { RSVPStatus } from "@/hooks/useGuests";
+import { Users, CheckCircle, Clock, Utensils } from "lucide-react";
+// import { RSVPStatus } from "@/hooks/useGuests";
 
 interface GuestStatsProps {
     stats: {
