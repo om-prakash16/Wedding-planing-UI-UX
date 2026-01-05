@@ -36,6 +36,7 @@ export default function MoodBoardPage() {
                     /* ==================== BOARD LIST VIEW ==================== */
                     <motion.div
                         key="board-list"
+                        // @ts-expect-error framer-motion types conflict with React 19
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -20 }}
@@ -88,6 +89,7 @@ export default function MoodBoardPage() {
                     /* ==================== SINGLE BOARD VIEW ==================== */
                     <motion.div
                         key="single-board"
+                        // @ts-expect-error framer-motion types conflict with React 19
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: 20 }}
