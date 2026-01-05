@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/Button";
 import { Plus, Printer, ArrowLeft, Trash2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const MotionDiv = motion.div as any;
+const MotionDiv = motion.div as any; // Cast to any to avoid Vercel build type errors
 
 export default function MoodBoardPage() {
     const { boards, addBoard, deleteBoard, addInspiration, deleteInspiration, isLoaded } = useMoodBoards();
