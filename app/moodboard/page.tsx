@@ -36,9 +36,12 @@ export default function MoodBoardPage() {
                     /* ==================== BOARD LIST VIEW ==================== */
                     <motion.div
                         key="board-list"
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -20 }}
+                        {...({
+                            initial: { opacity: 0, x: -20 },
+                            animate: { opacity: 1, x: 0 },
+                            exit: { opacity: 0, x: -20 }
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        } as any)}
                         className="space-y-8"
                     >
                         {/* Header */}
@@ -88,9 +91,12 @@ export default function MoodBoardPage() {
                     /* ==================== SINGLE BOARD VIEW ==================== */
                     <motion.div
                         key="single-board"
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: 20 }}
+                        {...({
+                            initial: { opacity: 0, x: 20 },
+                            animate: { opacity: 1, x: 0 },
+                            exit: { opacity: 0, x: 20 }
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        } as any)}
                         className="space-y-8"
                     >
                         {/* Top Bar */}
