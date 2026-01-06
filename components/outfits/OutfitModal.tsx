@@ -31,21 +31,25 @@ export function OutfitModal({ isOpen, onClose, onSave, initialData, activePerson
 
     // Load initial data if editing, else reset to props default
     useEffect(() => {
-        if (initialData) {
-            // eslint-disable-next-line react-hooks/set-state-in-effect
-            setFormData(initialData);
-        } else {
-            setFormData({
-                name: "",
-                type: "",
-                notes: "",
-                image: "",
-                jewelry: {},
-                person: activePerson,
-                ceremony: activeCeremony,
-            });
-        }
-    }, [initialData, isOpen, activePerson, activeCeremony]); // Reset when opening fresh
+        const timer = setTimeout(() => {
+            if (isOpen) {
+                if (initialData) {
+                    setFormData(initialData);
+                } else {
+                    setFormData({
+                        name: "",
+                        type: "",
+                        notes: "",
+                        image: "",
+                        jewelry: {},
+                        person: activePerson,
+                        ceremony: activeCeremony,
+                    });
+                }
+            }
+        }, 0);
+        return () => clearTimeout(timer);
+    }, [initialData, isOpen, activePerson, activeCeremony]);
 
     const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];

@@ -27,23 +27,23 @@ const DEFAULT_ITEMS: BudgetItem[] = [
 ];
 
 export function useBudget() {
-    const [items, setItems] = useState<BudgetItem[]>([]);
+    const [items, setItems] = useState<BudgetItem[]>(DEFAULT_ITEMS);
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        const saved = localStorage.getItem("budget_items");
-        if (saved) {
-            try {
-                // eslint-disable-next-line react-hooks/set-state-in-effect
-                setItems(JSON.parse(saved));
-            } catch (error) {
-                console.error("Failed to parse budget items", error);
-                setItems(DEFAULT_ITEMS);
+        const timer = setTimeout(() => {
+            const saved = localStorage.getItem("budget_items");
+            if (saved) {
+                try {
+                    setItems(JSON.parse(saved));
+                } catch (error) {
+                    console.error("Failed to parse budget items", error);
+                    setItems(DEFAULT_ITEMS);
+                }
             }
-        } else {
-            setItems(DEFAULT_ITEMS);
-        }
-        setIsLoaded(true);
+            setIsLoaded(true);
+        }, 0);
+        return () => clearTimeout(timer);
     }, []);
 
     useEffect(() => {

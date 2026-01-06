@@ -29,23 +29,23 @@ const DEFAULT_BOARDS: MoodBoard[] = [
 ];
 
 export function useMoodBoards() {
-    const [boards, setBoards] = useState<MoodBoard[]>([]);
+    const [boards, setBoards] = useState<MoodBoard[]>(DEFAULT_BOARDS);
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        const saved = localStorage.getItem("moodboard_data");
-        if (saved) {
-            try {
-                // eslint-disable-next-line react-hooks/set-state-in-effect
-                setBoards(JSON.parse(saved));
-            } catch (e) {
-                console.error("Failed to parse moodboard data", e);
-                setBoards(DEFAULT_BOARDS);
+        const timer = setTimeout(() => {
+            const saved = localStorage.getItem("moodboard_data");
+            if (saved) {
+                try {
+                    setBoards(JSON.parse(saved));
+                } catch (e) {
+                    console.error("Failed to parse moodboard data", e);
+                    setBoards(DEFAULT_BOARDS);
+                }
             }
-        } else {
-            setBoards(DEFAULT_BOARDS);
-        }
-        setIsLoaded(true);
+            setIsLoaded(true);
+        }, 0);
+        return () => clearTimeout(timer);
     }, []);
 
     useEffect(() => {

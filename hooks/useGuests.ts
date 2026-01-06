@@ -27,23 +27,23 @@ const DEFAULT_GUESTS: Guest[] = [
 ];
 
 export function useGuests() {
-    const [guests, setGuests] = useState<Guest[]>([]);
+    const [guests, setGuests] = useState<Guest[]>(DEFAULT_GUESTS);
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        const saved = localStorage.getItem("guest_list");
-        if (saved) {
-            try {
-                // eslint-disable-next-line react-hooks/set-state-in-effect
-                setGuests(JSON.parse(saved));
-            } catch (e) {
-                console.error("Failed to parse guest list", e);
-                setGuests(DEFAULT_GUESTS);
+        const timer = setTimeout(() => {
+            const saved = localStorage.getItem("guest_list");
+            if (saved) {
+                try {
+                    setGuests(JSON.parse(saved));
+                } catch (e) {
+                    console.error("Failed to parse guest list", e);
+                    setGuests(DEFAULT_GUESTS);
+                }
             }
-        } else {
-            setGuests(DEFAULT_GUESTS);
-        }
-        setIsLoaded(true);
+            setIsLoaded(true);
+        }, 0);
+        return () => clearTimeout(timer);
     }, []);
 
     useEffect(() => {

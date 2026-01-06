@@ -23,16 +23,18 @@ export function useWeddingData() {
 
     // Load from local storage on mount
     useEffect(() => {
-        const saved = localStorage.getItem("wedding_data");
-        if (saved) {
-            try {
-                // eslint-disable-next-line react-hooks/set-state-in-effect
-                setData(JSON.parse(saved));
-            } catch (e) {
-                console.error("Failed to parse wedding data", e);
+        const timer = setTimeout(() => {
+            const saved = localStorage.getItem("wedding_data");
+            if (saved) {
+                try {
+                    setData(JSON.parse(saved));
+                } catch (e) {
+                    console.error("Failed to parse wedding data", e);
+                }
             }
-        }
-        setIsLoaded(true);
+            setIsLoaded(true);
+        }, 0);
+        return () => clearTimeout(timer);
     }, []);
 
     // Save to local storage whenever data changes

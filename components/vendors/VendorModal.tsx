@@ -27,12 +27,16 @@ export function VendorModal({ isOpen, onClose, onSave, initialData }: VendorModa
     });
 
     useEffect(() => {
-        if (initialData) {
-            // eslint-disable-next-line react-hooks/set-state-in-effect
-            setFormData(initialData);
-        } else {
-            setFormData({ name: "", type: "Other", phone: "", totalAmount: 0, paidAmount: 0, notes: "" });
-        }
+        const timer = setTimeout(() => {
+            if (isOpen) {
+                if (initialData) {
+                    setFormData(initialData);
+                } else {
+                    setFormData({ name: "", type: "Other", phone: "", totalAmount: 0, paidAmount: 0, notes: "" });
+                }
+            }
+        }, 0);
+        return () => clearTimeout(timer);
     }, [initialData, isOpen]);
 
     const handleSubmit = (e: React.FormEvent) => {

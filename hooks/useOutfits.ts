@@ -50,23 +50,23 @@ const DEFAULT_OUTFITS: Outfit[] = [
 ];
 
 export function useOutfits() {
-    const [outfits, setOutfits] = useState<Outfit[]>([]);
+    const [outfits, setOutfits] = useState<Outfit[]>(DEFAULT_OUTFITS);
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        const saved = localStorage.getItem("outfit_data");
-        if (saved) {
-            try {
-                // eslint-disable-next-line react-hooks/set-state-in-effect
-                setOutfits(JSON.parse(saved));
-            } catch (e) {
-                console.error("Failed to parse outfit data", e);
-                setOutfits(DEFAULT_OUTFITS);
+        const timer = setTimeout(() => {
+            const saved = localStorage.getItem("outfit_data");
+            if (saved) {
+                try {
+                    setOutfits(JSON.parse(saved));
+                } catch (e) {
+                    console.error("Failed to parse outfit data", e);
+                    setOutfits(DEFAULT_OUTFITS);
+                }
             }
-        } else {
-            setOutfits(DEFAULT_OUTFITS);
-        }
-        setIsLoaded(true);
+            setIsLoaded(true);
+        }, 0);
+        return () => clearTimeout(timer);
     }, []);
 
     useEffect(() => {

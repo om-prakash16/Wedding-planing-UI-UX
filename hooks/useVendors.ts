@@ -24,23 +24,23 @@ const DEFAULT_VENDORS: Vendor[] = [
 ];
 
 export function useVendors() {
-    const [vendors, setVendors] = useState<Vendor[]>([]);
+    const [vendors, setVendors] = useState<Vendor[]>(DEFAULT_VENDORS);
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        const saved = localStorage.getItem("vendor_data");
-        if (saved) {
-            try {
-                // eslint-disable-next-line react-hooks/set-state-in-effect
-                setVendors(JSON.parse(saved));
-            } catch (e) {
-                console.error("Failed to parse vendor data", e);
-                setVendors(DEFAULT_VENDORS);
+        const timer = setTimeout(() => {
+            const saved = localStorage.getItem("vendor_data");
+            if (saved) {
+                try {
+                    setVendors(JSON.parse(saved));
+                } catch (e) {
+                    console.error("Failed to parse vendor data", e);
+                    setVendors(DEFAULT_VENDORS);
+                }
             }
-        } else {
-            setVendors(DEFAULT_VENDORS);
-        }
-        setIsLoaded(true);
+            setIsLoaded(true);
+        }, 0);
+        return () => clearTimeout(timer);
     }, []);
 
     useEffect(() => {

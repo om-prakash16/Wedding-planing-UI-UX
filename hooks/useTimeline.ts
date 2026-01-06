@@ -64,23 +64,23 @@ const DEFAULT_TIMELINE: TimelinePhase[] = [
 ];
 
 export function useTimeline() {
-    const [phases, setPhases] = useState<TimelinePhase[]>([]);
+    const [phases, setPhases] = useState<TimelinePhase[]>(DEFAULT_TIMELINE);
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        const saved = localStorage.getItem("timeline_data");
-        if (saved) {
-            try {
-                // eslint-disable-next-line react-hooks/set-state-in-effect
-                setPhases(JSON.parse(saved));
-            } catch (e) {
-                console.error("Failed to parse timeline data", e);
-                setPhases(DEFAULT_TIMELINE);
+        const timer = setTimeout(() => {
+            const saved = localStorage.getItem("timeline_data");
+            if (saved) {
+                try {
+                    setPhases(JSON.parse(saved));
+                } catch (e) {
+                    console.error("Failed to parse timeline data", e);
+                    setPhases(DEFAULT_TIMELINE);
+                }
             }
-        } else {
-            setPhases(DEFAULT_TIMELINE);
-        }
-        setIsLoaded(true);
+            setIsLoaded(true);
+        }, 0);
+        return () => clearTimeout(timer);
     }, []);
 
     useEffect(() => {
