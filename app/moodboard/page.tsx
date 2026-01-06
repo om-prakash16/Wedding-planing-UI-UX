@@ -37,6 +37,7 @@ export default function MoodBoardPage() {
                     <motion.div
                         key="board-list"
                         {...({
+                            // Framer Motion props cast to any to avoid TS mismatch in Vercel/Next.js builds
                             initial: { opacity: 0, x: -20 },
                             animate: { opacity: 1, x: 0 },
                             exit: { opacity: 0, x: -20 }
